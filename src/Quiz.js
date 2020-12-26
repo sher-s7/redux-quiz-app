@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getQuestions } from "./actions/questions";
 import Questions from "./containers/Questions";
+import SubmitContainer from "./containers/SubmitContainer";
 
 class Quiz extends React.Component {
   componentDidMount() {
@@ -11,6 +12,7 @@ class Quiz extends React.Component {
     return (
       <div className="QuizApp">
         <Questions />
+        <SubmitContainer />
       </div>
     );
   }

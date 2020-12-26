@@ -1,13 +1,12 @@
 import { SET_ANSWER } from "../actions/answers";
 
-const answers = (state = [], action) => {
+const answers = (state = {}, action) => {
   switch (action.type) {
     case SET_ANSWER:
-      return [
-        ...state.slice(0, action.id),
-        action.answer,
-        ...state.slice(action.id + 1),
-      ];
+      return {
+        ...state,
+        [action.id]: { userAnswer: action.answer },
+      };
     default:
       return state;
   }

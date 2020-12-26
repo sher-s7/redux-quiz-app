@@ -8,7 +8,7 @@ export const getQuestions = () => {
   return (dispatch) => {
     dispatch({ type: GET_QUESTIONS });
     return axios
-      .get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean")
+      .get("https://opentdb.com/api.php?amount=5&difficulty=easy&type=boolean")
       .then((res) =>
         dispatch({ type: GET_QUESTIONS_SUCCESS, questions: res.data.results })
       )

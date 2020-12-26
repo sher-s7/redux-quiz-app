@@ -1,13 +1,15 @@
+import QuestionContainer from "../containers/QuestionContainer";
+
 const QuestionsList = ({ questionsList, loading, error }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>There was an error while fetching the questions</p>;
 
   return (
-    <ul>
+    <ol>
       {questionsList.map((question, index) => (
-        <li key={index}>{question.question}</li>
+        <QuestionContainer key={index} text={question.question} id={index} />
       ))}
-    </ul>
+    </ol>
   );
 };
 
